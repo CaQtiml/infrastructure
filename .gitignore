@@ -1,0 +1,7 @@
+/venv
+.env
+.terraform*
+*.tfstate*
+pass.txt
+02-value.tfvars
+testconnect.py
