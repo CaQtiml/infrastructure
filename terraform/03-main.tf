@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_security_group" "cap_aws_sg" {
-  name_prefix = "capdetat-rds-sg-postgresql"
+  name = "postgresql-rds-sg"
 
   ingress {
     from_port   = 5432
@@ -17,10 +17,6 @@ resource "aws_security_group" "cap_aws_sg" {
     to_port     = 5432
     protocol    = "TCP"
     cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name = "capdetat_aws_sg"
   }
 }
 
