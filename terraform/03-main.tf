@@ -23,7 +23,7 @@ resource "aws_security_group" "cap_aws_sg" {
 resource "aws_db_instance" "capdetat_db" {
   identifier              = "maindb-capdetat"
   engine                  = "postgres"
-  engine_version          = "14.2"
+  engine_version          = "14.7"
   instance_class          = "db.t3.micro"
   db_name                 = "capdetat_maindb"
   username                = var.db_username
@@ -31,7 +31,7 @@ resource "aws_db_instance" "capdetat_db" {
   allocated_storage       = 20
   storage_type            = "gp2"
   publicly_accessible     = true
-  backup_retention_period = 7
+  backup_retention_period = 2
   skip_final_snapshot     = true
   vpc_security_group_ids  = [aws_security_group.cap_aws_sg.id]
 
